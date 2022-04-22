@@ -1,0 +1,64 @@
+{
+	"info": {
+		"_postman_id": "220344a8-1b31-46be-aba3-0c1a3b9360d0",
+		"name": "Collection test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "WebService Test Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Testing WebService API\", function(){",
+							"    pm.response.to.have.status(200);",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:jav=\"http://javawebservice.beingzero.in/\">\n    <soapenv:Header/>\n    <soapenv:Body>\n        <jav:Pricing>\n            <project_id>Test_Performance</project_id>\n            <country>Argentina</country>\n            <streetnumber>IGNETWORKSS</streetnumber>\n            <streetname>Lavalle 362 </streetname>\n            <city>Buenos Aires</city>\n            <state></state>\n            <zipcode></zipcode>\n            <phone></phone>\n            <latitude>-34.6019514656005</latitude>\n            <longitude>-58.37185355753063</longitude>\n            <product>BIA</product>\n            <speeddown>50M</speeddown>\n            <speedup>8M</speedup>\n            <pop>55</pop>\n            <term>24</term>\n            <currency>BRL</currency>\n            <customer>Virtela</customer>\n        </jav:Pricing>\n    </soapenv:Body>\n</soapenv:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.ignetworks.com/Calculator/PricingWebService?wsdl",
+					"protocol": "https",
+					"host": [
+						"api",
+						"ignetworks",
+						"com"
+					],
+					"path": [
+						"Calculator",
+						"PricingWebService"
+					],
+					"query": [
+						{
+							"key": "wsdl",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

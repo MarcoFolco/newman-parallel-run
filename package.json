@@ -1,7 +1,7 @@
 {
   "name": "newman_parallel",
   "version": "1.0.1",
-  "description": "",
+  "description": "A known limitation of the Postman Collection Runner is that it can only execute collection in a consecutive way.",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
@@ -10,8 +10,19 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "async": "^3.2.0",
-    "newman": "^5.2.0",
+    "async": "^3.2.3",
+    "newman": "^5.3.2",
     "path": "^0.12.7"
-  }
+  },
+  "directories": {
+    "doc": "docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarcoFolco/newman-parallel-run.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MarcoFolco/newman-parallel-run/issues"
+  },
+  "homepage": "https://github.com/MarcoFolco/newman-parallel-run#readme"
 }

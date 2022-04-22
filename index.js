@@ -2,10 +2,11 @@ const path = require('path')
 const async = require('async')
 const newman = require('newman')
 
-const PARALLEL_RUN_COUNT = 2
+const PARALLEL_RUN_COUNT = 50
+var error_count = 0
 
 const parametersForTestRun = {
-    collection: path.join(__dirname, 'postman/postman_collection_open_source.json'), // your collection
+    collection: path.join(__dirname, 'postman/request_collection.json'), // your collection
     reporters: 'cli'
 };
 
@@ -26,7 +27,11 @@ async.parallel(
 
         results.forEach(function (result) {
             var failures = result.run.failures;
+	    if (failures.length) {
+	    	error_count += 1;
+	    }
             console.info(failures.length ? JSON.stringify(failures.failures, null, 2) :
                 `${result.collection.name} ran successfully.`);
         });
+	console.info(`There were ${error_count} failed requests.`);
     });

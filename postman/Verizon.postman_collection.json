@@ -1,0 +1,45 @@
+{
+	"info": {
+		"_postman_id": "1d0223b5-c63d-4944-9674-3e7403128386",
+		"name": "Verizon",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token 68efda60a839c67a1b1b916a28878d1c9fe2e283",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"getAccessAvailability\":{\n     \"arg0\":{\n        \"product\":\"Ethernet\",\n        \"speed\":\"2 Mbps\",\n        \"companyName\":\"Verizon\",\n        \"term\":\"36\",\n        \"inquiryId\":\"8437701\",\n        \"serviceAddress\":{\n           \"unparsedAddress\":{\n              \"addressLine1\":\"2641 AV DR MORAES SALLES\",\n              \"city\":\"Campinas\",\n              \"stateRegion\":\"\",\n              \"latitude\":\"-23.497107\",\n              \"longitude\":\"-46.814556\",\n              \"postcode\":\"13010-002\",\n              \"country\":\"Brazil\",\n              \"arrayOfficeInfo\":{\n                 \"officeLocationInfo\":{\n                    \"locationDesignator\":\"\",\n                    \"LocationValue\":\"\"\n                 }\n              }\n           }\n        },\n        \"zEndAddress\":{\n           \"unparsedAddress\":{\n              \"addressLine1\":\"Sao Paulo Terremark (SAP3.GPP)\"\n           }\n        }\n     }\n  }\n}"
+				},
+				"url": {
+					"raw": "https://quoting.ignetworks.com/VerizonAPI/",
+					"protocol": "https",
+					"host": [
+						"quoting",
+						"ignetworks",
+						"com"
+					],
+					"path": [
+						"VerizonAPI",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
