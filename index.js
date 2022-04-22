@@ -6,7 +6,7 @@ const PARALLEL_RUN_COUNT = 50
 var error_count = 0
 
 const parametersForTestRun = {
-    collection: path.join(__dirname, 'postman/request_collection.json'), // your collection
+    collection: path.join(__dirname, 'postman/APICustomers.request_collection.json'), // your collection
     reporters: 'cli'
 };
 
@@ -28,7 +28,7 @@ async.parallel(
         results.forEach(function (result) {
             var failures = result.run.failures;
 	    if (failures.length) {
-	    	error_count += 1;
+	    	error_count += failures.length;
 	    }
             console.info(failures.length ? JSON.stringify(failures.failures, null, 2) :
                 `${result.collection.name} ran successfully.`);
